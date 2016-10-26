@@ -1,0 +1,109 @@
+﻿@using System.Collections.Generic
+@using LibraryApp.Models
+@using System.Collections.Generic
+@using LibraryApp.Models.Enum
+@using System.Collections.Generic
+@using LibraryApp.Models
+@using LibraryApp.Models.Enum
+@model LibraryApp.Models.Book
+
+@{
+    ViewBag.Title = "BooksDetails";
+}
+
+@helper ShowBook(KeyValuePair<Book, List<Author>> book)
+{
+    <table>
+        <tr>
+            <td>
+                <label>Title:</label>
+            </td>
+            <td>
+                @book.Key.Title
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Book ID:</label>
+            </td>
+            <td>
+                @book.Key.BookId
+            </td>
+        </tr><tr>
+            <td>
+                <label>Is Available:</label>
+            </td>
+            <td>
+                @if (book.Key.Keeper == Guid.Empty)
+                {
+                    <label>Yes</label>
+                }
+                else
+                {
+                <label>No</label>
+                }
+            </td>
+        </tr>
+    </table>
+}
+
+@helper ShowAuthor(KeyValuePair<Book, List<Author>> book)
+{
+    <table>
+        @for (int i = 0; i < book.Value.Count; i++)
+        {
+            <tr>
+                <td>
+                    <label>Author:</label>
+                </td>
+                <td>
+                    @book.Value[i].LastName
+                </td>
+                <td>
+                    @book.Value[i].FirstName
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@helper ShowHistory(List<KeyValuePair<Guid, string>> lstPairs)
+{
+    <table>
+        @for (int i = 0; i < lstPairs.Count; i++)
+        {
+            <tr>
+                <td>
+                    <label>User:</label>
+                </td>
+                <td>
+                    @lstPairs[i].Key
+                </td>
+                <td>
+                    <label>Action:</label>
+                </td>
+                <td>
+                    @lstPairs[i].Value
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<h1>Information of current book</h1>
+
+@using (Html.BeginForm("Index", "Filter"))
+{
+    <fieldset>
+        <legend>Book table</legend>
+        <div>
+            <label>
+                @ShowBook(ViewBag.Books)
+                @ShowAuthor(ViewBag.Books)
+                @ShowHistory(ViewBag.Actions)
+            </label>
+            <input type="submit" name="submitbutton" value="Home" />
+        </div>
+
+    </fieldset>
+}

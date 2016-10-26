@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "DeleteBookForm";
+}
+
+<h1>Deleting book by BookId</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("DeleteBookFormHandler", "Book"))
+{
+    <fieldset>
+        <legend>Enter books title for it's deleting</legend>
+        <div>
+            <label>Title:</label>
+            @Html.TextBox("strTitle")
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK"/>
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+
+    </fieldset>
+}

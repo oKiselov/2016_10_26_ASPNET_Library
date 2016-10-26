@@ -1,0 +1,35 @@
+﻿@using LibraryApp.Models
+@model LibraryApp.Models.User
+@{
+    ViewBag.Title = "DeleteFormHandle";
+}
+@helper Show(User currUser)
+{
+<div>
+    <label>First Name: </label>
+    @currUser.FirstName
+</div>
+<div>
+    <label>Last Name: </label>
+    @currUser.LastName
+</div>
+<div>
+    <label>E-mail:</label>
+    @currUser.eMail
+</div>
+}
+
+<h1>Deleting of user's account</h1>
+
+@using (Html.BeginForm("MenuLibrarian", "Entrance"))
+{
+    <fieldset>
+        <legend></legend>
+        <div>
+            <label>Account was successfully deleted</label>
+            @Show(ViewBag.User)
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

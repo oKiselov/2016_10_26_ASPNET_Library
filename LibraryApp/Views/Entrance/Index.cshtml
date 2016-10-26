@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Library.App Start Page</h1>
+<h2>Welcome to Library.App! We share knowledge!</h2>
+
+@using (Html.BeginForm("MainMenuHandler", "Entrance"))
+{
+    <fieldset>
+        <legend>Only registered users could meet books catalog </legend>
+        <div>
+            <label>Enter your account with your e-mail</label>
+         </div>
+        <label>OR</label>
+        <div>
+            <label>Create your personal account</label>
+            </div>
+        <input type="submit" name="submitbutton" value="Enter"/>
+        <span style='padding-left:10px;'> </span>
+        <input type="submit" name="submitbutton" value="Register" />
+    </fieldset>
+}
+

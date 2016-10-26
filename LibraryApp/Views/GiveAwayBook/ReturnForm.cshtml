@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "ReturnForm";
+}
+
+<h1>Return book options</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("ReturnHandler", "GiveAwayBook"))
+{
+    <fieldset>
+        <legend>Fill gap with book title</legend>
+        <div>
+            <label>Title: </label>
+            @Html.TextBox("strTitle")
+        </div>
+        <input type="submit" name="submitbutton" value="Return"/>
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+    </fieldset>
+}

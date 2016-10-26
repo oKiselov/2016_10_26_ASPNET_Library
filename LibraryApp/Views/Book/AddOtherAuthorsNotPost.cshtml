@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "AddOtherAuthorsNotPost";
+}
+
+<h1>Add new book to library</h1>
+<h2>Step 2</h2>
+
+@using (Html.BeginForm("AddSuccess", "Book"))
+{
+    <fieldset>
+        <legend>Fill information about author</legend>
+        <div>
+            <label>First Name: </label>
+            @Html.TextBox("strFName")
+            <label>Last Name: </label>
+            @Html.TextBox("strLName")
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+        <input type="submit" name="submitbutton" value="More" />
+    </fieldset>
+}

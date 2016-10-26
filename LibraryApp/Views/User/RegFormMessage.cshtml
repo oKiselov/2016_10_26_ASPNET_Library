@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "RegFormMessage";
+}
+
+<h1>New User registration</h1>
+
+@using (Html.BeginForm("Index", "Entrance"))
+{
+    <fieldset>
+        <legend></legend>
+        <div>
+            <label>Your account was successfully created</label>
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

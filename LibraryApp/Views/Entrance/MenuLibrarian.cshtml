@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "MenuLibrarian";
+}
+
+<h1>Library.App Administration Page</h1>
+<h2>Welcome to Library.App! We share knowledge!</h2>
+
+@using (Html.BeginForm("RedirectionMenuLibrarian", "Entrance"))
+{
+    <fieldset>
+        <legend>Choose your activity way </legend>
+        <table>
+            <tr>
+                <td>
+                    Search Books
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Search"/>
+                </td>
+            </tr><tr>
+                <td>
+                    Add book
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Add"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Remove book
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Remove"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Issue or return book
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Record"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cancel membership
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Expell"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Back to main menu
+                </td>
+                <td>
+                    <input type="submit" name="submitbutton" value="Menu"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}

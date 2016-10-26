@@ -1,0 +1,20 @@
+﻿<h1>Add new book to library</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("AddFirstAuthor", "Book"))
+{
+    <fieldset>
+        <legend>Fill information about book</legend>
+        <div>
+            <label>Book title: </label>
+            @Html.TextBox("strTitle")
+        </div>
+
+        <input type="submit" name="submitbutton" value="Next"/>
+
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+    </fieldset>
+}

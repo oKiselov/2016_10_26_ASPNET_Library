@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Choose options to filter books</h1>
+
+@using (Html.BeginForm("FilterMenu", "Filter"))
+{
+    <fieldset>
+        <legend>You could choose the book and use search to find it</legend>
+        <div>
+            <label>Show all books<span style='padding-left:10px;'> </span> 
+                <input type="submit" name="submitbutton" value="Show all" />
+            </label>
+        </div>
+        <br/><br/>
+        <div>
+            <label>
+                Show available books
+                <input type="submit" name="submitbutton" value="Available"/>
+            </label>
+        </div>
+        <br /><br />
+        <div>
+            <label>
+                Show books taken by user 
+                <input type="submit" name="submitbutton" value="Taken" />
+            </label>
+        </div>
+        <br /><br />
+        <div>
+            <label>
+                Search book by name
+            </label>
+            <input type="submit" name="submitbutton" value="Search"/>
+        </div>
+        <br /><br />
+        <div>
+            <label>
+                Show details about current book
+            </label>
+            <input type="submit" name="submitbutton" value="Details" />
+        </div>
+
+    </fieldset>
+}

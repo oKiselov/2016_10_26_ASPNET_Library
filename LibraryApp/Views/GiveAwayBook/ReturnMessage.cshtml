@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "ReturnMessage";
+}
+
+
+<h1>Return book options</h1>
+<h2>Step 3</h2>
+
+@using (Html.BeginForm("MenuLibrarian", "Entrance"))
+{
+    <fieldset>
+        <legend>Selected book was successfully returned</legend>
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

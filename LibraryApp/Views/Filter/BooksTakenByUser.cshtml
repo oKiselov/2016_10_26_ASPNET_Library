@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "BooksTakenByUser";
+}
+
+<h1>Books taken by User</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("BooksTakenByUserFinish", "Filter"))
+{
+    <fieldset>
+        <legend>Enter Users ID</legend>
+        <div>
+            <label>User's Id:</label>
+            @Html.TextBox("currGuid")
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

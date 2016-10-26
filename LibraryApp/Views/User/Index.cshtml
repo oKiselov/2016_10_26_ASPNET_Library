@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Registration of new user</h1>
+
+@using (Html.BeginForm("RegFormHandle", "User"))
+{
+    <fieldset>
+        <legend>Create your account</legend>
+        <div>
+            <label>First Name: </label>
+            @Html.TextBox("strFName")
+        </div>
+        <div>
+            <label>Last Name: </label>
+            @Html.TextBox("strLName")
+        </div>
+        <div>
+            <label>E-mail:</label>
+            @Html.TextBox("strMail")
+        </div>
+        <div>
+            <label>Choose your role: </label>
+        </div>
+        <input type="submit" name="submitbutton" value="User"/>
+
+        <div>
+            <label>Enter administrative password:</label>
+            @Html.TextBox("strPassword")
+        </div>
+        <input type="submit" name="submitbutton" value="Librarian"/>
+    </fieldset>
+}

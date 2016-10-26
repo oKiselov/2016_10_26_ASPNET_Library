@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "GetGuidForBookDetails";
+}
+
+<h1>Book's Details</h1>
+
+@using (Html.BeginForm("BooksDetails", "Filter"))
+{
+    <fieldset>
+        <legend>Book's ID is necessary</legend>
+        <div>
+            <label>Enter Book's ID
+                @Html.TextBox("currGuid")
+            </label>
+            <input type="submit" name="submitbutton" value="Next" />
+        </div>
+
+    </fieldset>
+}

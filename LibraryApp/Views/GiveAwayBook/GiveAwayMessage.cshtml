@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "GiveAwayMessage";
+}
+
+<h1>Give away book options</h1>
+<h2>Step 3</h2>
+
+@using (Html.BeginForm("MenuLibrarian", "Entrance"))
+{
+    <fieldset>
+        <legend>Selected book was successfully given away</legend>
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

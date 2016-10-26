@@ -1,0 +1,56 @@
+﻿@using LibraryApp.Models
+@model LibraryApp.Models.Book
+@{
+    ViewBag.Title = "GiveAwayHandler";
+}
+
+@helper ShowList(List<Book> books)
+{
+    <table>
+        @for (int i = 0; i < books.Count; i++)
+        {
+            <tr>
+                <td>
+                    @(i + 1)
+                </td>
+                <td>
+                    @books[i].BookId
+                </td>
+                <td>
+                    @books[i].Title
+                </td>
+                <td>
+                    @books[i].Keeper
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<h1>Give away book options</h1>
+<h2>Step 2</h2>
+
+@using (Html.BeginForm("GiveAwayFinish", "GiveAwayBook"))
+{
+    <fieldset>
+        <legend>List of books with such name</legend>
+        <div>
+            <label>
+                @ShowList(ViewBag.Books)
+            </label>
+        </div>
+        <div>
+            <label>Fill gaps with available Book's ID and User's e-mail</label>
+            <label>Book Id:</label>
+            @Html.TextBox("strBookId")
+            <label>User's e-mail</label>
+            @Html.TextBox("strMail")
+        </div>
+
+        <input type="submit" name="submitbutton" value="Give"/>
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+    </fieldset>
+}

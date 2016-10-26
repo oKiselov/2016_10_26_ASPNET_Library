@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "IncorrectBookInfo";
+}
+
+<h1>Book search </h1>
+
+@using (Html.BeginForm("Index", "Filter"))
+{
+    <fieldset>
+        <legend></legend>
+        <div>
+            <label>You entered incorrect information about book </label>
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

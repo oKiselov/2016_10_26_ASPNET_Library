@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "GiveAwayForm";
+}
+
+<h1>Give away book options</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("GiveAwayHandler", "GiveAwayBook"))
+{
+    <fieldset>
+        <legend>Fill gap with book title</legend>
+        <div>
+            <label>Title: </label>
+            @Html.TextBox("strTitle")
+        </div>
+        <input type="submit" name="submitbutton" value="Give"/>
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+    </fieldset>
+}

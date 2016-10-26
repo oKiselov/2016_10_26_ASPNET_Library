@@ -1,0 +1,48 @@
+﻿@using LibraryApp.Models
+@model LibraryApp.Models.Book
+@{
+    ViewBag.Title = "DeleteBookById";
+}
+
+@helper ShowList(List<Book> books)
+{
+    <table>
+        @for (int i = 0; i < books.Count; i++)
+        {
+            <tr>
+                <td>
+                    @(i + 1)
+                </td>
+                <td>
+                    @books[i].BookId
+                </td>
+                <td>
+                    @books[i].Title
+                </td>
+                <td>
+                    @books[i].Keeper
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<h1>Deleting book by BookId</h1>
+<h2>Step 3</h2>
+
+@using (Html.BeginForm("MenuLibrarian", "Entrance"))
+{
+    <fieldset>
+
+        <legend>Book with current ID was successfully deleted:</legend>
+        @ViewBag.Guid
+        <label>Here you can see other books with the same names (if they exists in library)</label>
+        <div>
+            <label>
+                @ShowList(ViewBag.Books)
+            </label>
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK"/>
+    </fieldset>
+}

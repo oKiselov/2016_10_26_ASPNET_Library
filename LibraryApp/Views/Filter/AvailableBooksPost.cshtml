@@ -1,0 +1,54 @@
+﻿@using System.Collections.Generic
+@using LibraryApp.Models
+@using System.Collections.Generic
+@model LibraryApp.Models.Book
+
+@{
+    ViewBag.Title = "AvailableBooksPost";
+}
+
+@helper ShowList(List<KeyValuePair<Book, List<Author>>> books)
+{
+    <table>
+        @for (int i = 0; i < books.Count; i++)
+        {
+            <tr>
+                <td>
+                    @(i + 1)
+                </td>
+                <td>
+                    @books[i].Key.BookId
+                </td>
+                <td>
+                    @books[i].Key.Title
+                </td>
+
+                @for (int j = 0; j < books[i].Value.Count; j++)
+                {
+                    <td>
+                        @books[i].Value[j].LastName;
+                    </td>
+                }
+
+            </tr>
+        }
+    </table>
+}
+
+<h1>The list of books in library</h1>
+
+@using (Html.BeginForm("AvailableBooksPost", "Filter"))
+{
+    <fieldset>
+        <legend>Book table(Available) </legend>
+        <div>
+            <label>
+                @ShowList(ViewBag.Books)
+            </label>
+            <input type="submit" name="submitbutton" value="Previous" />
+            <input type="submit" name="submitbutton" value="Next" />
+            <input type="submit" name="submitbutton" value="Home" />
+        </div>
+
+    </fieldset>
+}

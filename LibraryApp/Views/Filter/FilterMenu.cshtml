@@ -1,0 +1,43 @@
+﻿@using System.Collections.Generic
+@using LibraryApp.Models
+@using System.Collections.Generic
+@model LibraryApp.Models.Book
+@{
+    ViewBag.Title = "FilterMenu";
+}
+
+@helper ShowList(List<Book> books)
+{
+    <table>
+        @for (int i=0; i<books.Count; i++)
+        {
+            <tr>
+                <td>
+                @(i+1)
+                </td><td>
+                @books[i].BookId
+                </td><td>
+                @books[i].Title
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+    <h1>The list of books in library</h1>
+
+    @using (Html.BeginForm("ShowAllBooks", "Filter"))
+{
+        <fieldset>
+            <legend>Book table</legend>
+            <div>
+                <label>
+                    @ShowList(ViewBag.Books)
+                </label>
+                <input type="submit" name="submitbutton" value="Previous"/>
+                <input type="submit" name="submitbutton" value="Next"/>
+                <input type="submit" name="submitbutton" value="Home"/>
+            </div>
+
+        </fieldset>
+}

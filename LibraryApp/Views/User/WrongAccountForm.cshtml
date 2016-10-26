@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "WrongAccountForm";
+}
+
+<h1>Account registration or entrance </h1>
+
+@using (Html.BeginForm("Index", "Entrance"))
+{
+    <fieldset>
+        <legend></legend>
+        <div>
+            <label>You entered incorrect e-mail.  </label>
+        </div><div>
+            <label>Or You entered incorrect password. </label>
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

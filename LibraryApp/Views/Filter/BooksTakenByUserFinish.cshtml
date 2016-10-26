@@ -1,0 +1,48 @@
+﻿@using LibraryApp.Models
+@using LibraryApp.Models.Enum
+@model LibraryApp.Models.Book
+@{
+    ViewBag.Title = "BooksTakenByUserFinish";
+}
+
+@helper ShowList(List<Book> books)
+{
+    <table>
+        @for (int i = 0; i < books.Count; i++)
+        {
+            <tr>
+                <td>
+                    @(i + 1)
+                </td>
+                <td>
+                    @books[i].BookId
+                </td>
+                <td>
+                    @books[i].Title
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<h1>Search Book by Title</h1>
+<h2>Step 2</h2>
+
+@using (Html.BeginForm("Index", "Filter"))
+{
+    <fieldset>
+        <legend>List of books which were taken by User</legend>
+        <div>
+            @ViewBag.User.LastName @ViewBag.User.FirstName
+        </div>
+        <div>
+            Amount of books: @ViewBag.CountOfBooks
+        </div>
+        <div>
+            <label>
+                @ShowList(ViewBag.Books)
+            </label>
+        </div>
+        <input type="submit" name="submitbutton" value="OK" />
+    </fieldset>
+}

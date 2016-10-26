@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Give away or return book options</h1>
+
+@using (Html.BeginForm("MenuHandler", "GiveAwayBook"))
+{
+    <fieldset>
+        <legend>Choose necessary option</legend>
+        <div>
+            <label>Give book away</label>
+            <input type="submit" name="submitbutton" value="Give" />
+            <label>Return book </label>
+            <input type="submit" name="submitbutton" value="Return" />
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+        
+        
+    </fieldset>
+}
+

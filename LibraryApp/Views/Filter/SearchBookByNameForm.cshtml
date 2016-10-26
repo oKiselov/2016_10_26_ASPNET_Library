@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "SearchBookByNameForm";
+}
+
+<h1>Search Book by Title</h1>
+<h2>Step 1</h2>
+
+@using (Html.BeginForm("SearchBookByNameHandler", "Filter"))
+{
+    <fieldset>
+        <legend>Fill gap with book title</legend>
+        <div>
+            <label>Title: </label>
+            @Html.TextBox("strTitle")
+        </div>
+        <input type="submit" name="submitbutton" value="Next" />
+    </fieldset>
+}

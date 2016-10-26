@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "DeleteFormEnter";
+}
+
+<h1>Deleting of user's account</h1>
+
+@using (Html.BeginForm("DeleteFormHandle", "User"))
+{
+    <fieldset>
+        <legend>Enter user's account for it's deleting</legend>
+        <div>
+            <label>E-mail:</label>
+            @Html.TextBox("strMail")
+        </div>
+
+        <input type="submit" name="submitbutton" value="OK"/>
+        <div>
+            <label>Back to main menu </label>
+        </div>
+        <input type="submit" name="submitbutton" value="Home" />
+    </fieldset>
+}

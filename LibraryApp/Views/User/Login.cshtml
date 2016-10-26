@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h1>Login to your account</h1>
+
+@using (Html.BeginForm("LoginHandler", "User"))
+{
+    <fieldset>
+        <legend>Enter your e-mail and choose your role</legend>
+        <div>
+            <label>E-mail:</label>
+            @Html.TextBox("strMail")
+        </div>
+        <div>
+            <label>Choose your role: </label>
+        </div>
+        <input type="submit" name="submitbutton" value="User" />
+
+        <div>
+            <label>Enter administrative password:</label>
+            @Html.TextBox("strPassword")
+        </div>
+        <input type="submit" name="submitbutton" value="Librarian" />
+    </fieldset>
+}
