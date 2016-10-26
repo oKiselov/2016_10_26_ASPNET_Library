@@ -2,6 +2,9 @@
 
 namespace LibraryApp.Models
 {
+    /// <summary>
+    /// Class desribes model of Author
+    /// </summary>
     public class Author
     {
         public Guid AuthorId { get; set; }

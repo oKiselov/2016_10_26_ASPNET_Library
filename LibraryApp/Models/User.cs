@@ -5,6 +5,9 @@ using LibraryApp.Models.Enum;
 
 namespace LibraryApp.Models
 {
+    /// <summary>
+    /// Class describes model - User 
+    /// </summary>
     public class User:AbstractUser
     {
         public string eMail { get; set; }
